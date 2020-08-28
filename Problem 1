@@ -1,0 +1,8 @@
+def multiples_of_3_5(test_number):
+    total = 0
+    for n in range(test_number):
+        if (n % 3 == 0) or (n % 5 == 0):
+            total += n
+    print(total)
+
+multiples_of_3_5(1000)
