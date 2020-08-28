@@ -1,0 +1,16 @@
+def fibonacci(n):
+    if n <= 1:
+        return 1
+    total = fibonacci(n-2) + fibonacci(n-1)
+    return total
+
+total = 0
+counter = 1
+while True:
+    value = fibonacci(counter)
+    if value > 4_000_000:
+        break
+    if value % 2 == 0:
+        total += value
+    counter += 1
+print(total)
