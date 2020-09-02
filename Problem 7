@@ -1,0 +1,20 @@
+def isPrime(n:int):
+	if n > 1:
+		for i in range(2, n):
+			if n % i == 0:
+				return False
+		else:
+			return True
+	else:
+		return False
+
+
+if __name__=="__main__":
+	prime_nums_count = 0
+	prime_num = 0
+	while prime_nums_count < 10001:
+		if isPrime(prime_num):
+			prime_nums_count += 1
+		prime_num += 1
+	prime_num -= 1
+	print(prime_num)
