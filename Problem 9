@@ -1,0 +1,25 @@
+def check_pytha_triplet(a, b, c):
+    if a > c or b > c:
+        return False
+    if a**2 + b**2 == c**2:
+        return True
+
+def check_sum(a, b, c):
+    return a + b + c == 1000
+
+if __name__ == "__main__":
+    found = False
+    for a in range(3, 500):
+        for b in range(3, 500):
+            for c in range(3, 500):
+                if check_pytha_triplet(a, b, c) and check_sum(a, b, c):
+                    found = True
+                    break
+            if found:
+                break
+        if found:
+            break
+    if found:
+        print(a * b * c)
+    else:
+        print("None found")
