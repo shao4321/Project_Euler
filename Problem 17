@@ -1,0 +1,152 @@
+dic = {
+    0 : '',
+    1 : 'one',
+    2 : 'two',
+    3 : 'three',
+    4 : 'four',
+    5 : 'five',
+    6 : 'six',
+    7 : 'seven',
+    8 : 'eight',
+    9 : 'nine',
+    10 : 'ten',
+    11 : 'eleven',
+    12 : 'twelve',
+    13 : 'thirteen',
+    14 : 'fourteen',
+    15 : 'fifteen',
+    16 : 'sixteen',
+    17 : 'seventeen',
+    18 : 'eighteen',
+    19 : 'nineteen',
+    20 : 'twenty',
+    30 : 'thirty',
+    40 : 'forty',
+    50 : 'fifty',
+    60 : 'sixty',
+    70 : 'seventy',
+    80 : 'eighty',
+    90 : 'ninety',
+    100 : 'hundred',
+    1000 : 'thousand'
+}
+
+def less_than_21(n, string):
+    string += dic[n]
+    return string
+
+def between_21_100(n, string):
+    tmp = str(n)
+    if tmp[0] == '2':
+        string += (dic[20] + dic[int(tmp[1])])
+    elif tmp[0] == '3':
+        string += (dic[30] + dic[int(tmp[1])])
+    elif tmp[0] == '4':
+        string += (dic[40] + dic[int(tmp[1])])
+    elif tmp[0] == '5':
+        string += (dic[50] + dic[int(tmp[1])])
+    elif tmp[0] == '6':
+        string += (dic[60] + dic[int(tmp[1])])
+    elif tmp[0] == '7':
+        string += (dic[70] + dic[int(tmp[1])])
+    elif tmp[0] == '8':
+        string += (dic[80] + dic[int(tmp[1])])
+    else:
+        string += (dic[90] + dic[int(tmp[1])])
+    return string
+
+if __name__=="__main__":
+    string = ""
+    for i in range(1, 1001):
+        if i <= 20:
+            string = less_than_21(i, string)
+        elif i >= 21 and i < 100:
+            string = between_21_100(i, string)
+        elif i >= 100 and i < 1000:
+            tmp = str(i)
+            num_tmp = i
+            if tmp[0] == '1':
+                num_tmp -= 100
+                string += (dic[1] + dic[100])
+                if num_tmp > 0 and num_tmp <= 20:
+                    string += 'and'
+                    string = less_than_21(num_tmp, string)
+                elif num_tmp >= 21 and num_tmp < 100:
+                    string += 'and'
+                    string = between_21_100(num_tmp, string)
+            elif tmp[0] == '2':
+                num_tmp -= 200
+                string += (dic[2] + dic[100])
+                if num_tmp > 0 and num_tmp <= 20:
+                    string += 'and'
+                    string = less_than_21(num_tmp, string)
+                elif num_tmp >= 21 and num_tmp < 100:
+                    string += 'and'
+                    string = between_21_100(num_tmp, string)
+            elif tmp[0] == '3':
+                num_tmp -= 300
+                string += (dic[3] + dic[100])
+                if num_tmp > 0 and num_tmp <= 20:
+                    string += 'and'
+                    string = less_than_21(num_tmp, string)
+                elif num_tmp >= 21 and num_tmp < 100:
+                    string += 'and'
+                    string = between_21_100(num_tmp, string)
+            elif tmp[0] == '4':
+                num_tmp -= 400
+                string += (dic[4] + dic[100])
+                if num_tmp > 0 and num_tmp <= 20:
+                    string += 'and'
+                    string = less_than_21(num_tmp, string)
+                elif num_tmp >= 21 and num_tmp < 100:
+                    string += 'and'
+                    string = between_21_100(num_tmp, string)
+            elif tmp[0] == '5':
+                num_tmp -= 500
+                string += (dic[5] + dic[100])
+                if num_tmp > 0 and num_tmp <= 20:
+                    string += 'and'
+                    string = less_than_21(num_tmp, string)
+                elif num_tmp >= 21 and num_tmp < 100:
+                    string += 'and'
+                    string = between_21_100(num_tmp, string)
+            elif tmp[0] == '6':
+                num_tmp -= 600
+                string += (dic[6] + dic[100])
+                if num_tmp > 0 and num_tmp <= 20:
+                    string += 'and'
+                    string = less_than_21(num_tmp, string)
+                elif num_tmp >= 21 and num_tmp < 100:
+                    string += 'and'
+                    string = between_21_100(num_tmp, string)
+            elif tmp[0] == '7':
+                num_tmp -= 700
+                string += (dic[7] + dic[100])
+                if num_tmp > 0 and num_tmp <= 20:
+                    string += 'and'
+                    string = less_than_21(num_tmp, string)
+                elif num_tmp >= 21 and num_tmp < 100:
+                    string += 'and'
+                    string = between_21_100(num_tmp, string)
+            elif tmp[0] == '8':
+                num_tmp -= 800
+                string += (dic[8] + dic[100])
+                if num_tmp > 0 and num_tmp <= 20:
+                    string += 'and'
+                    string = less_than_21(num_tmp, string)
+                elif num_tmp >= 21 and num_tmp < 100:
+                    string += 'and'
+                    string = between_21_100(num_tmp, string)
+            else:
+                num_tmp -= 900
+                string += (dic[9] + dic[100])
+                if num_tmp > 0 and num_tmp <= 20:
+                    string += 'and'
+                    string = less_than_21(num_tmp, string)
+                elif num_tmp >= 21 and num_tmp < 100:
+                    string += 'and'
+                    string = between_21_100(num_tmp, string)
+        else:
+            string += (dic[1] + dic[1000])
+    print(len(string))
+    print(string)
