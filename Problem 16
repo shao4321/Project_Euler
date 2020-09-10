@@ -1,0 +1,8 @@
+def func(n):
+    res = pow(2, n)
+    total = 0
+    for dg in str(res):
+        total += int(dg)
+    return total
+
+print(func(1000))
