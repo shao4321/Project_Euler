@@ -1,0 +1,10 @@
+if __name__ == "__main__":
+    lst = []
+    for i in range(1_000_000):
+        val = 0
+        num_len = len(str(i))
+        for k in range(num_len):
+            val += pow(int(str(i)[k]), 5)
+        if val == i and val > 1:
+            lst.append(val)
+    print(sum(lst))
